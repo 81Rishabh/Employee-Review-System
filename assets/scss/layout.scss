@@ -1,0 +1,338 @@
+* {
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    line-height: 1.4;
+    margin: 0;
+    background-color: whitesmoke;
+  }
+  
+  :root {
+    --primary : rgb(7, 52, 65);
+    --white : #fff;
+    --success : rgb(23, 209, 23);
+  }
+
+  button {
+    cursor: pointer;
+  }
+
+  .icon {
+    color: grey;
+    margin-right: 5px;
+  }
+   
+header {
+  background-color: rgb(7, 59, 86);
+  padding: 1rem 2rem;
+
+  nav {
+    a {
+        text-decoration: none;
+    }
+    
+    #nav-brand {
+       color : #fff;   
+    }
+
+     width : 90%;
+     display: flex;
+     justify-content : space-between;
+     align-items : center;
+     #authentication a{
+         color: #fff;
+         margin: 0 1rem;
+     }
+  }
+}
+
+
+// container style
+.container {
+  width : 50%;
+  display: block;
+  margin : auto;
+  padding: 1rem 0;
+}
+
+.container .form-control {
+   width : 50%;
+   display : block;
+   margin : auto;
+   padding: .5rem 0 1rem 1rem;
+   background: #ffffff;
+   box-shadow: 0 0 9px 1px rgb(236, 236 ,236);
+   line-height: 2;
+   border-bottom: 3px solid var(--primary);
+
+   h3 {
+     color: rgb(11, 47, 68);
+     font-size: 1.5rem;
+   }
+
+   input[type="text"], input[type="password"]{
+     width : 80%;
+     padding : 1rem .4rem;
+     margin : .5rem 0rem;
+   }
+  
+   label[for="role"] {
+      color: var(--primary);
+      font-size: .8rem;
+   }
+
+   label[for="html"] {
+     font-size: .8rem;
+   }
+
+   button {
+      padding: .6rem;
+      border: none;
+      background: var(--primary);
+      color: var(--white);
+     
+   }
+}
+   
+// Admin page style
+#admin-dashboard {
+   display : flex;
+   
+   aside {
+      width : 15%;
+      padding-left : 1rem;
+      background-color : var(--white);
+      height : 92vh;
+   }
+
+   main {
+       width: 75%;
+       padding: 1rem;
+       
+       input {
+         padding: .5rem;
+       }
+
+       label {
+         font-size: .8rem;
+       }
+
+       #heading { 
+          color: rgb(232, 232, 232);  
+          padding:.5rem;
+          background: var(--primary);
+          display : inline-block;
+          font-size: .7rem;
+          
+       } 
+       
+       .input-form-control {
+          display: flex;
+          justify-content: flex-start;
+          align-items: center;
+          background : #fff;
+          flex-wrap: wrap;
+          padding: 1rem;
+          .role-control {
+            padding-top: 25px;
+          }
+          .form-control {
+            margin: 0 .5rem;
+          }
+
+          button {
+             padding : .5rem;
+             margin-top: 10px;
+             background : var(--primary);
+             color: var(--white);
+             font-size: .7rem;
+             cursor: pointer;
+          }
+       }
+
+       table {
+        font-family: arial, sans-serif;
+        border-collapse: collapse;
+        width: 100%;
+        margin-top: 1rem;
+      }
+
+     
+      td, th {
+        border: 1px solid #dddddd;
+        
+        text-align: left;
+        padding: 8px; 
+        font-size: .8rem;
+
+        #get-feedback-btn {
+          color: blue;
+        }
+
+       a {
+         color: rgb(77, 76, 76);
+       }
+
+    
+      }
+      
+      tr:nth-child(even) {
+        background-color: #dddddd;
+      }
+   } 
+}
+
+// employee page styling
+#employees-container  {
+ padding: 1rem;
+ width : 50%;
+ background-color: #fff;
+ margin: auto;
+ display: block;
+
+  .employe-list-group-item , .list-group  {
+     padding: 0;
+
+    .feed-list-group  {
+      height: 200px;
+      overflow-y: auto;
+      background-color :rgb(228, 228, 228);
+
+      .review-list-item {
+        border-bottom: 1px solid rgb(234, 234, 234);
+        padding-left: 10px;
+     }
+    }
+  
+    .list-item {
+      list-style: none;
+      // background: rgb(251, 251, 251);
+      background: #fff;
+      border-bottom: 3px solid rgb(243, 243, 243);
+      margin: .5rem;
+      padding: 1rem;
+
+      .title-name {
+        color: rgb(23, 11, 129);
+        font-size: 14px;
+      }
+      .subtitle-email {
+        font-size: 10px;
+        color: var(--primary);
+        opacity: .8;
+      }
+      
+      .review {
+        span {
+          font-weight: bold;
+        }
+        
+        margin-top: 20px;
+        font-size: 14px;
+        color: var(--primary);
+      
+        .who-commented {
+          color: rgb(91, 90, 90);
+          font-size: .6rem;
+        }
+      }
+
+      .feedback-actions {
+         .feedback-title {
+           font-size: .7rem;
+           color: rgb(79, 77, 77);
+         }
+         .action-btn {
+           font-size: .7rem;
+           font-weight: 600;
+           cursor: pointer;
+         }
+
+         #feedback-inputbox {
+           height: 50px;
+           width: 70%;
+           border : 1px solid rgb(237, 237, 237);
+           background: whitesmoke;
+         }
+      }
+    }
+  }
+}
+
+// Reviews page style
+
+.review-container {
+    width : 80%;
+    margin : 10px auto;
+    background: white;
+    box-shadow: 0px 0px 5px 2px rgb(218, 216, 216);
+    height : 30vh auto;
+    max-height: 80vh;
+    padding: .5rem;
+
+    // stying to edit review textarea
+    #edit-review {
+      margin: 20px;
+    }
+
+    p.title {
+      margin : 1rem 0rem 0rem .5rem;
+      color: rgb(249, 249, 249);
+      background : rgb(6, 6, 6);
+      display: inline-block;
+      padding: .2rem .5rem;
+      font-size: .6rem;
+    }
+  
+    .emp-name {
+      margin-left: 10px;
+      
+    }
+   
+    .review-list-group {
+      padding : 0;
+    
+    }
+    .review-list-item {
+      list-style: none;
+      background: #fff;
+      box-shadow: 0px 3px 5px 2px rgb(242, 241, 241);
+      margin: .5rem;
+      padding: .75rem;
+      cursor: pointer;
+      display:flex;
+      justify-content:space-between;
+      align-items: center;
+      p {
+        width : 90%;
+      }
+      
+      #review-actions {
+        width : 10%;
+        display : flex;
+        justify-content:space-around;
+         
+        
+        span {
+          width : 40px;
+          height : 40px;
+          display : flex;
+          justify-content: center;
+          align-items: center;
+          background : transparent;
+          text-align: center;
+          border-radius: 50%;
+           
+          a {
+            color: grey;
+            text-decoration: none;
+          }
+          &:hover {
+            background-color : whitesmoke;
+          }
+        }
+      }
+    }
+}

@@ -1,0 +1,49 @@
+<div class="review-container">
+    <div id="wrapper">
+        <p class="emp-name">
+            <span class="icon">
+                <i class="fi fi-sr-user"></i>
+              </span>
+            <span>
+                <%= employees.name %> 
+            </span>
+        </p>  
+    </div>
+    <% if (editable) { %>
+        <div id="edit-review">
+            <form action="/admin/editReview/<%= feed._id  %> " method="post">
+                <lable for="edit">Edit Review</lable><br>
+                <textarea name="review"  cols="30" rows="3">
+                </textarea><br>
+                <button type="submit">UPDATE</button>
+            </form>
+        </div>
+    <% } %>
+
+    <p class="title">Feeds</p>
+    <div class="reviews">
+        <% if (employees.reviews.length > 0) { %>
+            <ul class="list-group review-list-group">
+               <% for(feed of employees.reviews) { %>
+                  <li class="list-item review-list-item">
+                      <p> <%= feed.review %></p>
+                      <div id="review-actions" class="icon">
+                         <span>
+                            <a href="/admin/dashboard/reviews/<%= employees._id%>?review_id=<%= feed._id %>&isEditable=true">
+                                <i class="fi fi-rr-pencil"></i>
+                            </a>
+                         </span>
+                         <span>
+                            <a href="/admin/dashboard/reviews/delete/<%= employees._id%>?review_id=<%= feed._id %>">
+                                <i class="fi fi-rr-trash"></i>
+                            </a>
+                         </span>
+                      </div>
+                  </li>
+               <% } %>
+             </ul>
+         <% } else {%>
+            <p>We could't found any feedback Go back to: <a href="/admin/dashboard">Dashboard</a></p>    
+        <%} %>
+    </div>
+</div>

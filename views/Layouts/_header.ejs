@@ -1,0 +1,16 @@
+<header>
+    <nav>
+        <a href="/" id="nav-brand">
+           EReview
+        </a>
+        <div id="authentication">
+           <% if (locals.user) { %>
+               <a href="/"><%= locals.user.name  %> </a>
+               <a href="/employee/sign-out">Logout</a>
+           <% } else {%>
+                <a href="/employee/signIn"> Login</a>
+                <a href="/employee/signUp"> Register </a>
+            <%} %>
+        </div>
+    </nav>
+</header>

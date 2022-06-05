@@ -1,0 +1,79 @@
+<section id="admin-dashboard">
+   <aside>
+      <h3>Admin Dashboard</h3>
+   </aside>
+   <main>
+      <h4 id="heading">Add new Employee</h4>
+      <form action="/admin/createEmployee" method="post">
+         <div class="input-form-control">
+            <div class="form-control">
+               <label>Username</label><br>
+               <input type="text" name="name" placeholder="Enter employee username">
+            </div>
+            <div class="form-control">
+               <label>Email address</label><br>
+               <input type="text" name="email" placeholder="Enter email address">
+            </div>
+            <div class="form-control">
+               <label>Temprory password</label><br>
+               <input type="password" name="password" placeholder="Temprory password">
+            </div>
+            <button type="submit">Add Employee</button>
+         </div>
+      </form>
+      <section>
+         <!-- Add Review seperatly -->
+         <% if (isEditable) { %>
+            <div id="edit-form">
+               <h4 id="heading">Edit</h4>
+               <form action="/admin/editEmployee/<%= employeeDetails._id  %> " method="post">
+                  <div class="input-form-control">
+                     <div class="form-control">
+                        <label>Username</label><br>
+                        <input type="text" name="name" placeholder="Enter employee username" value="<%= employeeDetails.name %>">
+                     </div>
+                     <div class="form-control">
+                        <label>Email address</label><br>
+                        <input type="text" name="email" placeholder="Enter email address" value="<%= employeeDetails.email %>">
+                     </div>
+                     <div class="form-control role-control">
+                        <!-- <label for="role">Role</label>: -->
+                        <input type="radio" name="role" value="employee">
+                        <label for="html">Employee</label>
+                        <input type="radio" name="role" value="admin">
+                        <label for="html">Admin</label><br><br>  
+                     </div>
+                     <button type="submit">Update</button>
+                  </div>
+               </form>
+            </div>
+         <% } %>
+         <table>
+            <tr>
+               <th>Employee Name</th>
+               <th>Employee Email</th>
+               <th>Review</th>
+               <th>Edit</th>
+               <th>Delete</th>
+            </tr>
+            <% for( let i=0; i < employee.length; i++) { %>
+                  <% if (locals.user.id != employee[i]._id) { %>
+                     <tr>
+                        <td>
+                           <%= employee[i].name %>
+                        </td>
+                        <td>
+                           <%= employee[i].email %>
+                        </td>
+                        <td><a href="/admin/dashboard/reviews/<%= employee[i]._id %> ">Reviews</a></td>
+                        <td><a href="/admin/dashboard/<%= employee[i]._id %>?isEditable=true"><i class='fa fa-pencil icon'
+                                 style='font-size:24px'></i></a></td>
+                        <td><a href="/admin/deleteEmploye/<%= employee[i]._id  %> "><i class='fa fa-trash icon'
+                              style='font-size:24px'></i></a></td>
+                       </tr>
+                  <% } %>
+               <% } %>
+         </table>
+      </section>
+   </main>
+</section>
