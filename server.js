@@ -2,6 +2,7 @@ const express = require('express');
 const app = express();
 const port = 3000;
 const path = require('path');
+const dotenv = require('dotenv').config();
 const sassMiddleware = require('node-sass-middleware');
 const db = require('./config/db');
 const MongoStore = require('connect-mongo');
@@ -11,6 +12,9 @@ const passportLocal = require('./config/passport-local');
 const expressLayouts = require('express-ejs-layouts');
 var flash = require('connect-flash');
 var flashMiddleware = require('./config/flash-midileware');
+
+
+// config env file 
 
 // setup scss
 // scss midileware

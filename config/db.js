@@ -1,9 +1,9 @@
 const mongoose = require('mongoose');
 const db = mongoose.connection;
-mongoose.connect('mongodb://localhost:27017/ER-System', {useNewUrlParser: true, useUnifiedTopology: true});
+mongoose.connect(`mongodb+srv://Rishabh8109:${process.env.mongdb_pass}@er-cluster.hxdx5rg.mongodb.net/E-Reviews`, {useNewUrlParser: true, useUnifiedTopology: true});
 
 db.on('error' , function(err) {
-   console.bind.error(console, "Error in conneting to mongodb");
+   console.log("Error in conneting to mongodb");
 });
 
 db.once('open' , function() {
