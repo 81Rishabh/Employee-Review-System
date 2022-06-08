@@ -21,7 +21,7 @@ module.exports.getEmployee = async function (req, res) {
          }
       });
 
-      res.render('home'  , {title : "home" , employees : employees});
+      res.render('home'  , {title : "Employees" , employees : employees});
   } catch (err) {
       console.log(err);
       return res.status(500).json({message : 'Internal server error'});
