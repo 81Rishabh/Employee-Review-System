@@ -13,7 +13,8 @@ Make 1 login for admin and employee
 
 
 #### Clone project
-    git clone 
+    git clone https://github.com/81Rishabh/Employee-review-system.git
+
 ### `npm start`
 Runs the app in the development mode.\
 Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
