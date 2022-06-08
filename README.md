@@ -1,7 +1,7 @@
 # Employee-Review-System
 This is a small web application for maintaining employee and their feedbacks
 
-## Features
+## key Features
  #### Admin view
     Add/remove/update/view employees
     Add/update/view performance reviews
@@ -9,13 +9,16 @@ This is a small web application for maintaining employee and their feedbacks
  #### Employee view
     List of performance review requiring feedback
     Submit feedback
-Make 1 login for admin and employee
+ 1 login for admin and employee
 
 
 #### Clone project
     git clone https://github.com/81Rishabh/Employee-review-system.git
-
-### `npm start`
-Runs the app in the development mode.\
+    
+#### install dependecies
+    npm install
+    
+#### Runs the app in the development mode
+    npm start
 Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
