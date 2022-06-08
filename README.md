@@ -15,7 +15,7 @@ This is a small web application for maintaining employee and their feedbacks
 #### Clone project
     git clone https://github.com/81Rishabh/Employee-review-system.git
     
-#### install dependecies
+#### install dependencies
     npm install
     
 #### Runs the app in the development mode
