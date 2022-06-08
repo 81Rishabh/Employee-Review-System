@@ -29,7 +29,7 @@ module.exports.dashboard = async function (req, res) {
 module.exports.createEmployee = async function (req, res) {
   try {
     let emp = await Employee.create({...req.body , role : 'employee'});
-    console.log(emp);
+    req.flash('success' , 'created successfully');
     return res.redirect("back");
   } catch (error) {
     return res.redirect("back");
@@ -45,6 +45,7 @@ module.exports.editEmployee = async function(req, res) {
          email,
          role,
        });
+       req.flash('success' , 'Updated successfully');
        return res.redirect('/admin/dashboard');
     } catch (error) {
       console.log("Error n updating the employee.." , error);
@@ -58,12 +59,13 @@ module.exports.deleteEmployee = async function (req, res) {
 
   try {
     let employee = await Employee.findById(ID);
-   
+    
     if (!employee) {
       console.log("error in deleting employee", error);
       return res.redirect("back");
     }
     
+    req.flash('success' , 'Deleted successfully');
     // delete reviews that associated with employee
      await Reviews.deleteMany({emp_id : ID});
   

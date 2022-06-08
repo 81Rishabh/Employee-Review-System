@@ -9,6 +9,8 @@ const session = require('express-session');
 const passport = require('passport');
 const passportLocal = require('./config/passport-local');
 const expressLayouts = require('express-ejs-layouts');
+var flash = require('connect-flash');
+var flashMiddleware = require('./config/flash-midileware');
 
 // setup scss
 // scss midileware
@@ -55,6 +57,10 @@ app.use(session({
 app.use(passport.initialize());
 app.use(passport.session());
 app.use(passport.setAuthenticatedUser);
+
+// falsh midileware
+app.use(flash());
+app.use(flashMiddleware.setFalsh);
 
 // setup our routes
 app.use('/' , require('./routes/index'));

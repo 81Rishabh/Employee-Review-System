@@ -41,9 +41,9 @@ module.exports.create = async function (req, res) {
       try {
         // creating new user and saving in database
         await Employee.create(req.body);
+        req.flash('success' , 'You have successfully registered..');
         return res.redirect("/employee/signIn");
       } catch (err) {
-       
         console.log("error in creating user while signing in....! 👎" , err);
         return res.redirect("back");
       }
