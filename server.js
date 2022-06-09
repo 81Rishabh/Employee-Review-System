@@ -1,7 +1,6 @@
 const express = require('express');
 const app = express();
 const dotenv = require('dotenv').config();
-const port = process.env.port || 3000;
 const path = require('path');
 const sassMiddleware = require('node-sass-middleware');
 const db = require('./config/db');
@@ -12,6 +11,7 @@ const passportLocal = require('./config/passport-local');
 const expressLayouts = require('express-ejs-layouts');
 var flash = require('connect-flash');
 var flashMiddleware = require('./config/flash-midileware');
+const port = process.env.port;
 
 
 // config env file 
