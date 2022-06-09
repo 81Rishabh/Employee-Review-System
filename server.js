@@ -75,6 +75,6 @@ app.listen( process.env.port || port , function(err){
         console.log(`Error is : ${err}`);
         return;
     }
-    console.log("Server is running on the port " + port, app.settings.env);
+    console.log("Server is running on the port " + process.env.port || port, app.settings.env);
 });
 
