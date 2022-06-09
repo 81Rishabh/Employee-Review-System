@@ -14,7 +14,6 @@ var flashMiddleware = require('./config/flash-midileware');
 
 
 const port = process.env.port || 3000;
-
 require('./config/db');
 
 
