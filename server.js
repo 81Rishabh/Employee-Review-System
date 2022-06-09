@@ -1,7 +1,8 @@
 const express = require('express');
 const app = express();
-const dotenv = require('dotenv').config();
-const path = require('path');
+const path = require('path')
+require('dotenv').config();
+
 const sassMiddleware = require('node-sass-middleware');
 const db = require('./config/db');
 const MongoStore = require('connect-mongo');
