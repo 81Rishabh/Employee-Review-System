@@ -1,8 +1,8 @@
 const express = require('express');
 const app = express();
 const port = 3000;
-const path = require('path');
 const dotenv = require('dotenv');
+const path = require('path');
 dotenv.config({ path: path.resolve(__dirname, './.env') });
 const sassMiddleware = require('node-sass-middleware');
 const MongoStore = require('connect-mongo');
@@ -15,7 +15,6 @@ var flashMiddleware = require('./config/flash-midileware');
 
 // database connection 
 require('./config/db');
-
 
 // setup scss
 // scss midileware
