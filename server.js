@@ -1,5 +1,6 @@
 const express = require('express');
 const app = express();
+const port = 3000;
 const path = require('path');
 const dotenv = require('dotenv');
 dotenv.config({ path: path.resolve(__dirname, './config/.env') });
@@ -11,11 +12,10 @@ const passportLocal = require('./config/passport-local');
 const expressLayouts = require('express-ejs-layouts');
 var flash = require('connect-flash');
 var flashMiddleware = require('./config/flash-midileware');
-const port = 3000;
+
+// database connection 
 require('./config/db');
 
-
-// config env file 
 
 // setup scss
 // scss midileware
