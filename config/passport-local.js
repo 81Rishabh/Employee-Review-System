@@ -14,7 +14,6 @@ passport.use(
             }
 
             if (!user || user.password != password) {
-                 req.flash('error' , 'Invalid Username/Password');
                  return done(null, false);
             }
             
@@ -51,8 +50,9 @@ passport.checkAuthentication = function(req, res,next) {
           //  if user is signed in  , then pass on the request  to the next function(controller's action)
         next();
      }
-     
-    return res.redirect('/employee/signIn');
+     else {
+        return res.redirect('/employee/signIn');
+     }
 }
 
 
