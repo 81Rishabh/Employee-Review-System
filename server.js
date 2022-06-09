@@ -2,6 +2,8 @@ const express = require('express');
 const app = express();
 const path = require('path');
 const dotenv = require('dotenv');
+// config dot env file 
+dotenv.config();
 const sassMiddleware = require('node-sass-middleware');
 const MongoStore = require('connect-mongo');
 const session = require('express-session');
@@ -11,8 +13,7 @@ const expressLayouts = require('express-ejs-layouts');
 var flash = require('connect-flash');
 var flashMiddleware = require('./config/flash-midileware');
 
-// config dot env file 
-dotenv.config();
+
 const port = process.env.port || 3000;
 
 require('./config/db');
