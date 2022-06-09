@@ -3,7 +3,7 @@ const app = express();
 const port = 3000;
 const path = require('path');
 const dotenv = require('dotenv');
-dotenv.config({ path: path.resolve(__dirname, './config/.env') });
+dotenv.config({ path: path.resolve(__dirname, './.env') });
 const sassMiddleware = require('node-sass-middleware');
 const MongoStore = require('connect-mongo');
 const session = require('express-session');
