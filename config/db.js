@@ -1,11 +1,11 @@
 const mongoose = require('mongoose');
-mongoose
-      .connect(process.env.MONGODB_URI, {
-        useNewUrlParser: true
-      })
-      .then(() => {
-        console.log('Database connected successfully!');
-      })
-      .catch((err) => {
-        console.log('Error connecting with error code:', err);
-      });
+const db = mongoose.connection;
+mongoose.connect(process.env.MONGODB_URI, {useNewUrlParser: true});
+
+db.on('error' , function(err) {
+   console.log("Error in conneting to mongodb" , err);
+});
+
+db.once('open' , function() {
+  console.log('Connected to mongodb.......✌️ ✌️ ✌️');
+});
