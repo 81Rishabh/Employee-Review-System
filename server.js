@@ -2,8 +2,6 @@ const express = require('express');
 const app = express();
 const path = require('path');
 const dotenv = require('dotenv');
-
-// config dot env file 
 dotenv.config({ path: path.resolve(__dirname, './config/.env') });
 const sassMiddleware = require('node-sass-middleware');
 const MongoStore = require('connect-mongo');
