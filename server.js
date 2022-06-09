@@ -69,11 +69,11 @@ app.use(flashMiddleware.setFalsh);
 // setup our routes
 app.use('/' , require('./routes/index'));
 
-app.listen( process.env.port || port , function(err){
+app.listen( process.env.PORT || port , function(err){
     if(err) {
         console.log(`Error is : ${err}`);
         return;
     }
-    console.log("Server is running on the port " + process.env.port || port, app.settings.env);
+    console.log("Server is running on the port " + process.env.PORT || port, app.settings.env);
 });
 
